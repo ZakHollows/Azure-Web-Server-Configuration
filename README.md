@@ -3,6 +3,7 @@ Creating and configuring a web Server using Azure CLI and Bash commands to insta
 
 Using the following commands created a VM Web Server with Azure:
 * az vm create --resource-group "IntroAzureRG" --name my-vm --size Standard_D2s_v5 --public-ip-sku Standard --image Ubuntu2204 --admin-username azureuser --generate-ssh-keys
+<img width="1687" height="419" alt="No 1" src="https://github.com/user-attachments/assets/f9594a26-e00f-4c6d-a19e-3b8f9c2dd7e4" />
 
 The next change creates a pathway to install Ngnix on the VM:
 * az vm extension set --resource-group "IntroAzureRG" --vm-name my-vm --name customScript --publisher Microsoft.Azure.Extensions --version 2.1 --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-nginx.sh"]}' --protected-settings '{"commandToExecute": "./configure-nginx.sh"}'
